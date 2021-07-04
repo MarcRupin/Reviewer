@@ -41,6 +41,6 @@ def face_beeper():
     put_beeper()
     move()
 
-
+# do not add this if you are using the Karel IDE
 if __name__ == '__main__':
     run_karel_program('Midpoint.w')
