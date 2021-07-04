@@ -1,0 +1,46 @@
+from karel.stanfordkarel import *
+
+"""
+File: Midpoint.py
+------------------------
+Place a beeper on the middle of the first row.
+"""
+
+def main():
+    if front_is_blocked():
+         put_beeper()
+    else:
+        boundary_beeper()
+        while no_beepers_present():
+            move()
+            face_beeper()
+        if beepers_present():
+            pick_beeper()
+            turn_around()
+            move()
+
+def boundary_beeper():
+    put_beeper()
+    while front_is_clear():
+        move()
+    put_beeper()
+    turn_around()
+    move()
+
+def turn_around():
+    turn_left()
+    turn_left()
+
+
+def face_beeper():
+    while no_beepers_present():
+        move()
+    pick_beeper()
+    turn_around()
+    move()
+    put_beeper()
+    move()
+
+
+if __name__ == '__main__':
+    run_karel_program('Midpoint.w')
