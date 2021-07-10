@@ -1,0 +1,99 @@
+# Running Total
+
+SENTINEL = 0
+
+def main():
+    """
+    1. First we take user input
+    2. calculate the sum
+    3. If the  user input is 0, program will end
+    """
+    user_number = int(input("Enter a value: "))
+    total_sum = 0
+    while user_number != SENTINEL:
+        total_sum = total_sum + user_number
+        print("The total sum is: ", str(total_sum))
+        user_number = int(input("Enter a value: "))
+# Python boilerplate
+if __name__ == '__main__':
+    main()
+
+#Countdown
+def main():
+    num1=10
+    while num1 != 0:
+        print(str(num1))
+        num1 = num1 - 1
+    if (num1 == 0):
+        print("The time has ended.")
+
+# Python boilerplate
+if __name__ == '__main__':
+    main()
+    
+# Math Practice
+import random
+MIN_NUMBER = 10
+MAX_NUMBER = 99
+
+def main():
+    score = 0
+    while score != 3:
+        num1 = random.randint(MIN_NUMBER, MAX_NUMBER)
+        num2 = random.randint(MIN_NUMBER, MAX_NUMBER)
+        print("What is" + " " + str(num1) + " "+ "+" + " " + str(num2)+"?")
+        answer=input("Your answer:")
+        correct_answer = num1 + num2
+        check_answer = (num1 + num2) - int(answer)
+        if check_answer == 0:
+            print("Correct!")
+            score = score + 1
+        if check_answer != 0:
+            print("Incorrect. The expected answer is" + " " + str(correct_answer))
+            score = 0
+    if score == 3:
+        print("Congratulations! You've gotten 3 correct in a row.")
+
+# Python boilerplate
+if __name__ == '__main__':
+    main()
+
+#Ancient Game of Nimm
+import random
+
+def main():
+    stone_pile = 20
+    turn_count = 0
+    while stone_pile != 0:
+        if stone_pile != 20:
+            print()
+        if stone_pile !=0:
+            print("There are" + " " + str(stone_pile) + " " + "stones left")
+            removal_stone= int(input("Player 1 would you like to remove 1 or 2 stones? "))
+            while removal_stone > 2 or removal_stone < 1:
+                removal_stone = int(input("Please enter 1 or 2:" + " "))
+            stone_pile = stone_pile - removal_stone
+            if stone_pile != 0:
+                turn_count = turn_count + 1
+            if stone_pile == 0:
+                turn_count = turn_count 
+            print()
+            if stone_pile != 0:
+                print("There are" + " " + str(stone_pile) + " " + "stones left")
+                removal_stone= int(input("Player 2 would you like to remove 1 or 2 stones? "))
+                while removal_stone > 2 or removal_stone < 1:
+                    removal_stone = int(input("Please enter 1 or 2:" + " "))
+                stone_pile = stone_pile - removal_stone
+            if stone_pile != 0:
+                turn_count = turn_count - 1
+            if stone_pile == 0:
+                turn_count = turn_count 
+    if stone_pile == 0 and turn_count == 0:
+            print("Player 2 wins!")
+    if stone_pile == 0 and turn_count == 1:
+            print()
+            print("Player 1 wins!")
+
+# Python boilerplate
+if __name__ == '__main__':
+    main()
